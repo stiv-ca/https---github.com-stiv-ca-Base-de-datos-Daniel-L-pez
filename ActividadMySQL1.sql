@@ -59,7 +59,13 @@ MySQL Server utiliza una arquitectura de motor de almacenamiento conectable que 
 
 Para determinar qué motores de almacenamiento admite su servidor, utilice la SHOW ENGINESdeclaración. El valor de la Supportcolumna indica si se puede utilizar un motor. Un valor de YES, NOo DEFAULTindica que un motor está disponible, no disponible o disponible y actualmente configurado como motor de almacenamiento predeterminado.*/
 
-SELECT * FROM users;
+/*Problema 1*/
+
+SELECT nombres,apellidos,edad FROM users WHERE edad = 20;
+
+/*Problema 2*/
+
+SELECT * FROM users WHERE genero = 'M';
 
 /*Problema 3*/
 SELECT nombres,edad FROM users WHERE edad < 5 order by edad asc LIMIT 1;
@@ -112,5 +118,17 @@ SELECT nombres,musica FROM users WHERE edad = '50';
 
 /*Problema 17*/
 SELECT nombres,musica FROM users WHERE musica = 'NULL';
+
+/*Problema 18*/
+
+SELECT SUM (edad) FROM users;
+
+/*Problema 19*/
+
+SELECT COUNT(*) FROM users WHERE pais = 'ecuador';
+
+/*Problema 20*/
+
+SELECT COUNT(*) FROM users WHERE pais = 'colombia' and musica = 'vallenato';
 
 
